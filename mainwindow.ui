@@ -64,7 +64,7 @@ QPushButton:pressed {
      <string>C</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_more_or_less">
+   <widget class="QPushButton" name="pushButton_plussminus">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -130,7 +130,7 @@ QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #FF7832, stop: 1 #FF9739);
 }
-</string>
+ </string>
     </property>
     <property name="text">
      <string>÷</string>
@@ -368,7 +368,7 @@ QPushButton:pressed {
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_point">
+   <widget class="QPushButton" name="pushButton_decimal">
     <property name="geometry">
      <rect>
       <x>120</x>
