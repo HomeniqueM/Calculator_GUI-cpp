@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_07,SIGNAL(released()),this,SLOT(digit_pressed()));
     connect(ui->pushButton_08,SIGNAL(released()),this,SLOT(digit_pressed()));
     connect(ui->pushButton_09,SIGNAL(released()),this,SLOT(digit_pressed()));
+    connect(ui->pushButton_plussminus,SIGNAL(released()),this,SLOT(unary_operation_pressed()));
 }
 
 MainWindow::~MainWindow()
@@ -44,11 +45,21 @@ void MainWindow::on_pushButton_decimal_released()
     usingDecimal =true;
     }
 }
-
+/**
+ * @brief MainWindow::unary_operation_pressed
+ * Operaçoes unarias
+ */
 void MainWindow::unary_operation_pressed()
 {
+    QString newLabel;
+    double labelNumber;
+
     QPushButton *pressButton = (QPushButton*)sender();
-    if(butto->text() == '+/-'){
-        label= 
+    if(pressButton->text() == "+/-"){
+        labelNumber = ui->label->text().toDouble();
+        labelNumber = labelNumber*-1;
+        newLabel = QString::number(labelNumber,'g',15);
+
+        ui->label->setText(newLabel);
     }
 }
