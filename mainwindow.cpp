@@ -36,3 +36,19 @@ void MainWindow::digit_pressed(){
     ui->label->setText(newLabel);
 }
 
+
+void MainWindow::on_pushButton_decimal_released()
+{
+    if(!usingDecimal){
+    ui->label->setText(ui->label->text()+".");
+    usingDecimal =true;
+    }
+}
+
+void MainWindow::unary_operation_pressed()
+{
+    QPushButton *pressButton = (QPushButton*)sender();
+    if(butto->text() == '+/-'){
+        label= 
+    }
+}
