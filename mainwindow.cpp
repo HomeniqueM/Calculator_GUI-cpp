@@ -71,4 +71,21 @@ void MainWindow::unary_operation_pressed()
 
         ui->label->setText(newLabel);
     }
+
+}
+
+void MainWindow::on_pushButton_C_released()
+{
+
+}
+
+
+void MainWindow::on_pushButton_iquals_released()
+{
+
+}
+
+void MainWindow::binary_operation_pressed(){
+
+    QPushButton *pressButton = (QPushButton*)sender();
 }
