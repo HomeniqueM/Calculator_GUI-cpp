@@ -136,7 +136,7 @@ QPushButton:pressed {
      <string>÷</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_multiplication">
+   <widget class="QPushButton" name="pushButton_multiply">
     <property name="geometry">
      <rect>
       <x>180</x>

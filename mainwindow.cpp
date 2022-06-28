@@ -19,6 +19,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->pushButton_plussminus,SIGNAL(released()),this,SLOT(unary_operation_pressed()));
     connect(ui->pushButton_percentage,SIGNAL(released()),this,SLOT(unary_operation_pressed()));
+
+    connect(ui->pushButton_sum ,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_subtraction,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_division,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_multiply,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
+
 }
 
 MainWindow::~MainWindow()

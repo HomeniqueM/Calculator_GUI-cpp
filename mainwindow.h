@@ -18,6 +18,8 @@ public:
 private:
     Ui::MainWindow *ui;
     bool usingDecimal = false;
+    double firstNum;
+    double seconNum;
 
 private slots:
     void digit_pressed();
