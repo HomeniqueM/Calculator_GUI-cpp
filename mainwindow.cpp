@@ -134,4 +134,7 @@ void MainWindow::binary_operation_pressed()
 {
 
     QPushButton *pressButton = (QPushButton *)sender();
+    firstNum = ui->label->text().toDouble();
+    pressButton->setChecked(true);
+    
 }
