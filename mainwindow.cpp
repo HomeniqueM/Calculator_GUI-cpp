@@ -42,15 +42,27 @@ void MainWindow::digit_pressed()
     QString newLabel;
     double labelNumber;
 
-    if (ui->pushButton_sum->isChecked() || ui->pushButton_subtraction->isChecked() ||
-        ui->pushButton_division->isChecked() || ui->pushButton_multiply->isChecked())
+    if ((!userIsTypingSecondNumber) && (ui->pushButton_sum->isChecked() ||
+                                        ui->pushButton_subtraction->isChecked() || ui->pushButton_division->isChecked() ||
+                                        ui->pushButton_multiply->isChecked()))
     {
         labelNumber = pressButton->text().toDouble();
-    }else{
-        labelNumber = (ui->label->text() + pressButton->text()).toDouble();
+        userIsTypingSecondNumber = true;
+        newLabel = QString::number(labelNumber, 'g', 15);
+    }
+    else
+    {
+        if (ui->label->text().contains('.') && pressButton->text() == "0")
+        {
+            newLabel = ui->label->text() + pressButton->text();
+        }
+        else
+        {
+            labelNumber = (ui->label->text() + pressButton->text()).toDouble();
+            newLabel = QString::number(labelNumber, 'g', 15);
+        }
     }
 
-    newLabel = QString::number(labelNumber, 'g', 15);
     ui->label->setText(newLabel);
 }
 
@@ -92,6 +104,14 @@ void MainWindow::unary_operation_pressed()
 
 void MainWindow::on_pushButton_C_released()
 {
+    ui->pushButton_sum->setChecked(false);
+    ui->pushButton_subtraction->setChecked(false);
+    ui->pushButton_division->setChecked(false);
+    ui->pushButton_multiply->setChecked(false);
+
+    userIsTypingSecondNumber = false;
+    ui->label->setText(0);
+    usingDecimal = false;
 }
 
 void MainWindow::on_pushButton_iquals_released()
@@ -128,6 +148,7 @@ void MainWindow::on_pushButton_iquals_released()
         ui->label->setText(newLabel);
         ui->pushButton_division->setChecked(false);
     }
+    userIsTypingSecondNumber = false;
 }
 
 void MainWindow::binary_operation_pressed()
@@ -136,5 +157,4 @@ void MainWindow::binary_operation_pressed()
     QPushButton *pressButton = (QPushButton *)sender();
     firstNum = ui->label->text().toDouble();
     pressButton->setChecked(true);
-    
 }

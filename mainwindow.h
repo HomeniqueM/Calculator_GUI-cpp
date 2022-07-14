@@ -20,6 +20,7 @@ private:
     bool usingDecimal = false;
     double firstNum;
     double seconNum;
+    bool userIsTypingSecondNumber = false;
 
 private slots:
     void digit_pressed();
