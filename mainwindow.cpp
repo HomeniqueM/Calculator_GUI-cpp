@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setFixedSize(241,361);
     connect(ui->pushButton_00, SIGNAL(released()), this, SLOT(digit_pressed()));
     connect(ui->pushButton_01, SIGNAL(released()), this, SLOT(digit_pressed()));
     connect(ui->pushButton_02, SIGNAL(released()), this, SLOT(digit_pressed()));
